@@ -1,0 +1,23 @@
+@media (max-width: 600px) {
+    body {
+        overflow-y: scroll !important;
+        padding-left: var(--margin_mobile);
+        padding-right: var(--margin_mobile);
+    }
+
+    nav {
+        padding-left: var(--margin_mobile);
+        padding-right: var(--margin_mobile);
+    }
+
+    .bottom {
+        flex-direction: column;
+   
+    }
+
+    .bottom .left,
+    .bottom .right {
+        width: 100%;
+        min-height: 30vh;
+    }
+}

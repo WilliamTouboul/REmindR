@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REmindR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+</head>
+
+<body>
+    <nav>
+        <h1>REmindR</h1>
+        <ul>
+            <li>Tout les rappels</li>
+            <li>Par categorie</li>
+            <li>Créer une catégorie</li>
+        </ul>
+    </nav>
+
+    <h2>Rappel(s) du jour :</h2>
+
+    <ul class="reminder_list">
+        <li class="reminder_item category_1" id="reminder_item">
+            <p class="category">Pro</p>
+            <div class="item_header">
+                <h3 class="title">Relance de M. Michaud</h3>
+                <div class="date">02/12/2022</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur. Nisl erat nam nisi
+                duis in quam ultrices. Ultrices tellus
+                aliquam lacus sed mattis leo nulla feugiat vulputate.
+            </p>
+
+            <button>VALIDEZ</button>
+        </li>
+
+        <li class="reminder_item category_2" id="reminder_item">
+            <p class="category">Perso</p>
+            <div class="item_header">
+                <h3 class="title">Sortie Tome 18</h3>
+                <div class="date">02/12/2022</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur. Nisl erat nam nisi
+                duis in quam ultrices. Ultrices tellus
+                aliquam lacus sed mattis leo nulla feugiat vulputate.
+            </p>
+
+            <button>VALIDEZ</button>
+        </li>
+
+        <li class="reminder_item category_3" id="reminder_item">
+            <p class="category">Finances</p>
+            <div class="item_header">
+                <h3 class="title">Faire le versement à xxxx</h3>
+                <div class="date">02/12/2022</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur. Nisl erat nam nisi
+                duis in quam ultrices. Ultrices tellus
+                aliquam lacus sed mattis leo nulla feugiat vulputate.
+            </p>
+
+            <button>VALIDEZ</button>
+        </li>
+
+        <li class="reminder_item category_1" id="reminder_item">
+            <p class="category">Sorties</p>
+            <div class="item_header">
+                <h3 class="title">Sortie Tome 18</h3>
+                <div class="date">02/12/2022</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur. Nisl erat nam nisi
+                duis in quam ultrices. Ultrices tellus
+                aliquam lacus sed mattis leo nulla feugiat vulputate.
+            </p>
+
+            <button>VALIDEZ</button>
+        </li>
+
+
+        <li class="reminder_item category_2" id="reminder_item">
+            <p class="category">Pro</p>
+            <div class="item_header">
+                <h3 class="title">Sortie Tome 18</h3>
+                <div class="date">02/12/2022</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur. Nisl erat nam nisi
+                duis in quam ultrices. Ultrices tellus
+                aliquam lacus sed mattis leo nulla feugiat vulputate.
+            </p>
+
+            <button>VALIDEZ</button>
+        </li>
+    </ul>
+
+    <div class="bottom">
+        <div class="left">
+            <h2>
+                Rappel(s) à venir :
+            </h2>
+            <ul class="next_reminder_list">
+                <li class="next_reminder_item" id="next_reminder_item">
+                    <p class="next_reminder_title text_1">Titre</p>
+                    <p class="next_reminder_desc">Lorem ipsum dolor sit amet consectetur. Nisl ...</p>
+                    <p class="next_reminder_date">03/01/2023</p>
+                </li>
+                <li class="next_reminder_item" id="next_reminder_item">
+                    <p class="next_reminder_title text_2">Titre</p>
+                    <p class="next_reminder_desc">Lorem ipsum dolor sit amet consectetur. Nisl ...</p>
+                    <p class="next_reminder_date">03/01/2023</p>
+                </li>
+                <li class="next_reminder_item" id="next_reminder_item">
+                    <p class="next_reminder_title text_2">Titre</p>
+                    <p class="next_reminder_desc">Lorem ipsum dolor sit amet consectetur. Nisl ...</p>
+                    <p class="next_reminder_date">03/01/2023</p>
+                </li>
+                <li class="next_reminder_item" id="next_reminder_item">
+                    <p class="next_reminder_title text_3">Titre</p>
+                    <p class="next_reminder_desc">Lorem ipsum dolor sit amet consectetur. Nisl ...</p>
+                    <p class="next_reminder_date">03/01/2023</p>
+                </li>
+
+            </ul>
+        </div>
+        <div class="right">
+            <h2>
+                Ajouter un rappel :
+            </h2>
+            <form id="form">
+                <div class="form_line">
+                    <input type="text" name="reminder_title" id="reminder_title" placeholder="Titre du rappel">
+                </div>
+                <div class="form_line">
+                    <select name="reminder_cat" id="reminder_cat" class="reminder_cat">
+                        <option selected>Catégorie</option>
+                        <option value="category_1">One</option>
+                        <option value="category_2">Two</option>
+                        <option value="category_3">Three</option>
+                        <option value="category_4">Four</option>
+                        <option value="category_5">Five</option>
+                        <option value="category_6">Six</option>
+                    </select>
+                    <input type="date">
+                </div>
+                <textarea name="reminder_desc" id="reminder_desc" placeholder="Description du rappel"></textarea>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    navigator.serviceWorker.register('/myproject/scripts/common/pushNotifications/sw.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+    });
+</script>
+<script src="background.js"></script>
+<script src="index.js"></script>
+
+</html>

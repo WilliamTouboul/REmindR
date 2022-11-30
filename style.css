@@ -1,0 +1,331 @@
+:root {
+    --text_color: #161616;
+    --bg_color: #EEEEEE;
+    --category_color_1: #DD744F;
+    --category_color_2: #948EC5;
+    --category_color_3: #A5C371;
+    --category_color_4: #E5BF5C;
+    --category_color_5: #B973DA;
+    --category_color_6: #D8698A;
+    font-size: 16px;
+    --h1_size: 2.5rem;
+    --text_size: 1rem;
+    --h2_size: 2rem;
+    --desc_size: .75rem;
+    --margin: 100px;
+    --margin_mobile: 2rem;
+}
+
+@font-face {
+    font-family: 'Poppins_med';
+    src: url(assets/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins_bold';
+    src: url(assets/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins_bold_it';
+    src: url(assets/Poppins-BoldItalic.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins_med';
+
+}
+
+body {
+    padding-top: 8rem;
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     NAV                                    */
+/* -------------------------------------------------------------------------- */
+
+h1 {
+    font-size: var(--h1_size);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-self: center;
+}
+
+nav ul li {
+    transition: all .15s;
+
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    color: var(--category_color_1);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    main                                    */
+/* -------------------------------------------------------------------------- */
+
+h2 {
+    font-size: var(--h2_size);
+    margin-bottom: 2rem;
+}
+
+.reminder_list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding-bottom: 2rem;
+}
+
+.reminder_list::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+}
+
+.reminder_list::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+.reminder_list::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.reminder_list::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.reminder_list::-webkit-scrollbar-thumb:active {
+    background: var(--category_color_1);
+}
+
+.reminder_list::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.reminder_list::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+.reminder_list::-webkit-scrollbar-track:active {
+    background: #151515;
+}
+
+.reminder_list::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+.category_1 {
+    background-color: var(--category_color_1);
+}
+
+.category_2 {
+    background-color: var(--category_color_2);
+}
+
+.category_3 {
+    background-color: var(--category_color_3);
+}
+
+.category_4 {
+    background-color: var(--category_color_4);
+}
+
+.category_5 {
+    background-color: var(--category_color_5);
+}
+
+.category_6 {
+    background-color: var(--category_color_6);
+}
+
+.text_1 {
+    color: var(--category_color_1)
+}
+
+.text_2 {
+    color: var(--category_color_2)
+}
+
+.text_3 {
+    color: var(--category_color_3)
+}
+
+.text_4 {
+    color: var(--category_color_4)
+}
+
+.text_5 {
+    color: var(--category_color_5)
+}
+
+.text_6 {
+    color: var(--category_color_6)
+}
+
+
+.reminder_item {
+    position: relative;
+    min-height: 16rem;
+    border-radius: 1.5rem;
+    min-width: 30rem;
+    width: 30%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.reminder_item .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg_color);
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-width: 6rem;
+    font-size: var(--desc_size);
+    border-radius: 77px;
+}
+
+.reminder_item .item_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reminder_item .item_header .date {
+    opacity: .6
+}
+
+.reminder_item button {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    border: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 77px;
+    font-family: 'Poppins_bold';
+    cursor: pointer;
+    transition: all .2s;
+    background-color: var(--text_color);
+    color: var(--bg_color)
+}
+
+.reminder_item button:hover {
+    background-color: var(--bg_color);
+    color: var(--text_color);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.bottom .left,
+.bottom .right {
+    width: 50%;
+    height: 100%;
+}
+
+.next_reminder_list {
+    list-style: none;
+}
+
+.next_reminder_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px var(--text_color) solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.next_reminder_title {
+    font-family: 'Poppins_bold';
+}
+
+form {
+    height: 80%;
+    width: 100%;
+}
+
+.form_line {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+#reminder_title,
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+.form_line input,
+.form_line select {
+    width: 50%;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 1px #7e7e7e solid;
+    padding-left: 1rem;
+}
+
+textarea {
+    height: 12vh;
+    border-radius: .5rem;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    border: 1px #7e7e7e solid;
+}
